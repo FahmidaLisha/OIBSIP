@@ -1,21 +1,18 @@
-# Task 1: Iris Flower Classification
+
+
+# Task 2: Unemployment Analysis with Python
 
 ## Objective
 
-The objective of this project is to train a machine learning classification
-model to identify iris flower species based on their physical measurements.
-
-The project classifies flowers into three species:
-
-- Setosa
-- Versicolor
-- Virginica
+The objective of this project is to perform Exploratory Data Analysis (EDA)
+on unemployment data in India to identify regional and temporal trends and
+analyze the impact of the COVID-19 pandemic on unemployment rates.
 
 ## Technologies Used
 
 - Python
 - Pandas
-- Scikit-learn
+- NumPy
 - Matplotlib
 - Seaborn
 - Jupyter Notebook
@@ -23,39 +20,58 @@ The project classifies flowers into three species:
 
 ## Dataset
 
-The Iris dataset is directly available from `sklearn.datasets`, so no
-external download is required.
+The project uses the **Unemployment in India** dataset.
 
-The dataset contains 150 samples with four features:
+The dataset contains unemployment and labour market information for
+different regions of India over multiple time periods.
 
-- Sepal Length
-- Sepal Width
-- Petal Length
-- Petal Width
+The main variables include:
+
+- Region
+- Date
+- Frequency
+- Estimated Unemployment Rate
+- Estimated Employed
+- Estimated Labour Participation Rate
 
 ## Project Workflow
 
-1. Load the Iris dataset
+1. Load the unemployment dataset
 2. Create a Pandas DataFrame
-3. Perform Exploratory Data Analysis (EDA)
-4. Check dataset shape and data types
+3. Inspect the dataset shape and structure
+4. Check data types
 5. Check for missing values
-6. Generate descriptive statistics
-7. Visualize feature distributions using pairplots
-8. Create box plots for each feature
-9. Analyze the most discriminative features
-10. Split the dataset into training and testing sets
-11. Scale the features
-12. Train Logistic Regression
-13. Train K-Nearest Neighbours (KNN)
-14. Evaluate both models
-15. Compare model performance
-16. Select the best-performing model
+6. Clean column names
+7. Convert the Date column to datetime format
+8. Generate descriptive statistics
+9. Calculate region-wise average unemployment rates
+10. Analyze month-wise unemployment trends
+11. Compare unemployment rates for at least three regions
+12. Identify the top 10 regions with the highest average unemployment rate
+13. Analyze correlations between unemployment, employment and labour participation
+14. Create a correlation heatmap
+15. Split the data into pre-COVID and post-COVID periods
+16. Calculate mean unemployment rates for both periods
+17. Compare pre-COVID and post-COVID unemployment rates
+18. Analyze the impact of COVID-19 on unemployment
+19. Draw conclusions from the analysis
+
+## Data Cleaning
+
+The dataset was cleaned before performing the analysis.
+
+The cleaning process included:
+
+- Removing unnecessary spaces from column names
+- Checking for missing values
+- Handling missing observations where necessary
+- Converting the Date column into datetime format
+- Sorting the data chronologically
 
 ## Exploratory Data Analysis
 
-EDA was performed to understand the structure and distribution of the
-dataset.
+EDA was performed to understand regional and temporal patterns in
+unemployment.
 
 The analysis included:
 
@@ -63,53 +79,98 @@ The analysis included:
 - Data types
 - Null value checking
 - Descriptive statistics
-- Species distribution
-- Feature visualization
+- Region-wise average unemployment
+- Month-wise unemployment trends
+- Regional time-series comparison
+- Top 10 regions by average unemployment
 
-## Feature Selection
+## Time-Series Analysis
 
-The visualizations showed that **petal length** and **petal width** are the
-most discriminative features for distinguishing the three Iris species.
+A time-series analysis was performed to observe how unemployment rates
+changed over time.
 
-## Machine Learning Models
+Line charts were created to:
 
-Two classification algorithms were trained:
+- Show the overall month-wise unemployment trend
+- Compare unemployment rates across three selected regions
+- Identify major changes in unemployment over time
 
-### 1. Logistic Regression
+## Regional Analysis
 
-Logistic Regression was used as the first classification model.
+The average unemployment rate was calculated for each region.
 
-### 2. K-Nearest Neighbours (KNN)
+The regions were then compared to identify areas with relatively higher
+and lower average unemployment rates.
 
-KNN was used as the second classification model.
+A bar chart was created to display the **top 10 regions with the highest
+average unemployment rate**.
 
-## Model Evaluation
+## Correlation Analysis
 
-The models were evaluated using:
+Correlation analysis was performed using the following variables:
 
-- Accuracy
-- Confusion Matrix
-- Precision
-- Recall
-- F1-Score
-- Classification Report
+- Unemployment Rate
+- Estimated Employed
+- Labour Participation Rate
 
-## Results
+A **correlation heatmap** was created using Seaborn to visualize the
+strength and direction of relationships between these variables.
 
-The **K-Nearest Neighbours (KNN)** model achieved an accuracy of:
+Correlation indicates statistical association between variables and does
+not necessarily imply causation.
 
-**96%**
+## COVID-19 Analysis
 
-KNN was therefore selected as the **best-performing model** for this
-project.
+The dataset was divided into two periods:
+
+- **Pre-COVID:** Before March 2020
+- **Post-COVID:** March 2020 onwards
+
+The average unemployment rate and labour participation rate were calculated
+for both periods.
+
+A comparison chart was created to examine changes in unemployment during
+the COVID-19 period.
+
+## Visualizations
+
+The project includes:
+
+- Month-wise unemployment rate line chart
+- Three-region unemployment time-series line chart
+- Top 10 regions unemployment bar chart
+- Employment indicators correlation heatmap
+- Pre-COVID vs post-COVID comparison chart
+- COVID-19 unemployment trend visualization
+
+## Key Findings
+
+The analysis shows that unemployment rates vary across different regions
+of India.
+
+Unemployment also changes over time, with different regions showing
+different patterns and fluctuations.
+
+The top 10 analysis identifies regions with the highest average
+unemployment rates.
+
+The correlation analysis shows the statistical relationships between
+unemployment, employment and labour participation.
+
+The pre-COVID and post-COVID comparison helps demonstrate the changes in
+unemployment associated with the COVID-19 period.
 
 ## Conclusion
 
-The project demonstrates that machine learning can effectively classify
-Iris flowers based on their physical measurements. Among the two tested
-models, KNN achieved the best performance with **96% accuracy**.
+This project demonstrates how Python can be used to perform Exploratory
+Data Analysis on real-world unemployment data.
+
+Using Pandas, Matplotlib and Seaborn, the project analyzes regional
+differences, time-based trends, labour-market relationships and the impact
+of the COVID-19 pandemic on unemployment in India.
 
 ## Project Files
 
-- `Iris_Flower_Classification.ipynb` - Complete Jupyter/Google Colab notebook
+- `Unemployment_Analysis_with_Python.ipynb` - Complete Jupyter/Google Colab notebook
+- `Unemployment in India.csv` - Dataset used for the analysis
 - `README.md` - Project documentation
